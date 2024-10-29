@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React from 'react';
 import "./App.css";
 import Drum from "./Drum";
-
+import { AudioClip } from "./types";
 const audioClips: AudioClip[] = [
   {
     keyTrigger: "Q",
@@ -11,42 +11,42 @@ const audioClips: AudioClip[] = [
   {
     keyTrigger: "W",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-2.mp3",
-    description: "Heater 1",
+    description: "Heater 2",
   },
   {
     keyTrigger: "E",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-3.mp3",
-    description: "Heater 1",
+    description: "Heater 3",
   },
   {
     keyTrigger: "A",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-4_1.mp3",
-    description: "Heater 1",
+    description: "Heater 4",
   },
   {
     keyTrigger: "S",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Heater-6.mp3",
-    description: "Heater 1",
+    description: "Clap",
   },
   {
     keyTrigger: "D",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Dsc_Oh.mp3",
-    description: "Heater 1",
+    description: "Open-HH",
   },
   {
     keyTrigger: "Z",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Kick_n_Hat.mp3",
-    description: "Heater 1",
+    description: "Kick-n'-Hat",
   },
   {
     keyTrigger: "X",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/RP4_KICK_1.mp3",
-    description: "Heater 1",
+    description: "Kick",
   },
   {
     keyTrigger: "C",
     url: "https://cdn.freecodecamp.org/testable-projects-fcc/audio/Cev_H2.mp3",
-    description: "Heater 1",
+    description: "Closed-HH",
   },
 ];
 
@@ -65,7 +65,7 @@ function App() {
     document.getElementById("display")!.innerText=clip.description;
   };
     return (
-      <div className="container" id="drume-machine" onKeyDown={playAudio}>
+      <div className="container" id="drum-machine" onKeyDown={playAudio}>
         <h1>FCC Drume Machine</h1>
         <div className="whole-drum">
           {audioClips.map((clip) => (
